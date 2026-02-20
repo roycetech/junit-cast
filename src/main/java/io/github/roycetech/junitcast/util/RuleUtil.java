@@ -18,8 +18,7 @@ public final class RuleUtil {
 	/**
 	 * Utility class.
 	 */
-	private RuleUtil()
-	{
+	private RuleUtil() {
 	}
 
 	/**
@@ -56,15 +55,16 @@ public final class RuleUtil {
 	 * @param ruleItem   the next rule item to parse.
 	 */
 	private static void processRuleItem(final Map<String, Object> ruleMap,
-										final List<String> duplicates, final String ruleItem)
+			final List<String> duplicates, final String ruleItem)
 	{
 		if (!ruleItem.contains(":")) {
 			throw new JUnitCastException(
-				"A colon is required to separate the outcome followed by the rule clause.");
+					"A colon is required to separate the outcome followed by the rule clause.");
 		}
 
 		final String[] actionClauseArr = ruleItem.split(":");
-		if (actionClauseArr.length > 2) {
+		final boolean isMultiAction = actionClauseArr.length > 2;
+		if (isMultiAction) {
 			throw new JUnitCastException("Too many colons");
 		}
 

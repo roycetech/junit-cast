@@ -14,9 +14,7 @@ import io.github.roycetech.junitcast.ResourceFixture.ResourceKey;
  */
 public class ExemptInitializer implements ResourceParameterInitializer {
 
-	/**
-	 * Reference to the original resource fixture.
-	 */
+	/** Reference to the original resource fixture. */
 	private final ResourceFixture resourceFixture;
 
 	/**
