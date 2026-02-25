@@ -21,8 +21,8 @@ jobs:
           command: |
             mvn install -Dmaven.test.skip=true -Dgpg.skip
             make test
-      - run:
-          name: Upload coverage results
-          command: |
-            JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter format-coverage target/site/jacoco/jacoco.xml --input-type jacoco
-            ./cc-test-reporter upload-coverage
+      # - run:
+      #     name: Upload coverage results
+      #     command: |
+      #       JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter format-coverage target/site/jacoco/jacoco.xml --input-type jacoco
+      #       ./cc-test-reporter upload-coverage
